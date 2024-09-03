@@ -8,8 +8,11 @@ import { Component } from '@angular/core';
 export class AppComponent {
   message = '';
 
+  const headers = { 'content-type': 'application/json'}  
+  const body = JSON.stringify({"name": "bob"});
+
   constructor(private http: HttpClient) {
-    this.http.post('/api/test')
+    this.http.post('/api/test',body,{'headers':headers})
       .subscribe((resp: any) => this.message = resp.text);
   }
 }
