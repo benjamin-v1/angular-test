@@ -8,8 +8,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
   message = '';
 
-  const headers = { 'content-type': 'application/json'}  
-  const body = JSON.stringify({"name": "bob"});
+  headers = { 'content-type': 'application/json'}  
+  body = JSON.stringify({"name": "bob"});
 
   constructor(private http: HttpClient) {
     this.http.post('/api/test',this.body,{'headers':this.headers})
