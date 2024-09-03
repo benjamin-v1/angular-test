@@ -12,7 +12,7 @@ export class AppComponent {
   const body = JSON.stringify({"name": "bob"});
 
   constructor(private http: HttpClient) {
-    this.http.post('/api/test',body,{'headers':headers})
+    this.http.post('/api/test',this.body,{'headers':this.headers})
       .subscribe((resp: any) => this.message = resp.text);
   }
 }
